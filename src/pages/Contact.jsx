@@ -7,28 +7,24 @@ function Contact() {
   const [show, setShow] = useState(false);
 
   return (
-    <div>
-
+    <section className="content-card">
       <h2>Contact</h2>
 
       <input
+        className="contact-input"
         type="text"
         placeholder="Enter Message"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
 
-      <p>Your Message : {message}</p>
+      <div className="contact-actions">
+        <button onClick={() => setShow(!show)}>Toggle Help</button>
+        <span className="helper-text">Your Message : {message}</span>
+      </div>
 
-      <button onClick={() => setShow(!show)}>
-        Toggle Help
-      </button>
-
-      {show && (
-        <p>Please enter your message above.</p>
-      )}
-
-    </div>
+      {show && <p>Please enter your message above.</p>}
+    </section>
   );
 }
 

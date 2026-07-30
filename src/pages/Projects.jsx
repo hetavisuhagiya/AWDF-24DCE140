@@ -10,7 +10,7 @@ function Projects() {
 
   useEffect(() => {
 
-    fetch("https://github.com/hetavisuhagiya/AWDF-24DCE140")
+    fetch("https://api.github.com/users/hetavisuhagiya/repos")
 
       .then((response) => {
         if (!response.ok) {
@@ -38,35 +38,26 @@ function Projects() {
   if (error) return <ErrorMessage message={error} />;
 
   return (
-    <div>
-
+    <section className="content-card">
       <h2>GitHub Repositories</h2>
 
-      <ul>
-
+      <ul className="repo-list">
         {repos.map((repo) => (
-
-          <li key={repo.id}>
-
+          <li className="repo-item" key={repo.id}>
             <strong>{repo.name}</strong>
-
             <br />
-
             <a
+              className="repo-link"
               href={repo.html_url}
               target="_blank"
               rel="noreferrer"
             >
               {repo.html_url}
             </a>
-
           </li>
-
         ))}
-
       </ul>
-
-    </div>
+    </section>
   );
 }
 

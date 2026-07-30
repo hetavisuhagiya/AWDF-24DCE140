@@ -1,11 +1,21 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ isDarkMode, onToggleTheme }) {
   return (
-    <nav>
-      <Link to="/">Home</Link> |
-      <Link to="/projects">Projects</Link> |
-      <Link to="/contact">Contact</Link>
+    <nav className="top-nav">
+      <div className="brand">Hetavi</div>
+
+      <div className="nav-links">
+        <NavLink to="/" end>
+          Home
+        </NavLink>
+        <NavLink to="/projects">Projects</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
+      </div>
+
+      <button className="theme-toggle" onClick={onToggleTheme}>
+        {isDarkMode ? "☀️ Light" : "🌙 Dark"}
+      </button>
     </nav>
   );
 }

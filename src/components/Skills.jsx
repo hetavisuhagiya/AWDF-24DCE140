@@ -1,14 +1,14 @@
 function Skills({ skillList }) {
   return (
-    <div>
+    <section className="content-card">
       <h2>Skills</h2>
 
-      <ul>
+      <ul className="skills-list">
         {skillList.map((skill) => (
           <li key={skill}>{skill}</li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 }
 
