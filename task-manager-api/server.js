@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 require("dotenv").config();
 
 const Task = require("./models/Task");
@@ -8,6 +9,7 @@ const app = express();
 
 // Parse JSON
 app.use(express.json());
+app.use(cors());
 
 // Connect MongoDB
 mongoose
